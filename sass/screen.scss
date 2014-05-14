@@ -1,6 +1,73 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
+@import "compass";
 @import "compass/reset";
+
+/* media query mixin */
+@mixin query($size) {
+	@if $size == bigtime {
+		@media (min-width: 1366px) { @content; }
+	} @else if $size == standard {
+		@media (max-width: 1366px) { @content; }
+	} @else if $size == tablet-landscape {
+		@media (max-width: 1024px) { @content; }
+	} @else if $size == tablet-portrait {
+		@media (max-width: 764px) { @content; }
+	} @else if $size == mobile-landscape {
+		@media (max-width: 568px) { @content; }
+	} @else if $size == mobile-portrait {
+		@media (max-width: 320px) { @content; }
+	}
+}
+
+* {	@include box-sizing(border-box); }
+
+$container: 1208px;
+$gpad: 5px;
+
+/* Setting up all col# classes */
+[class*="col"] {
+	float: left;
+	padding: $gpad;
+	&:first-child {
+		padding-left: 0;
+	}
+	&:last-child {
+		padding-right: 0;
+	}
+}
+.col100 {
+	width: 100%;
+}
+.col53 {
+	width: 53%;
+}
+.col50 {
+	width: 50%;
+}
+.col46 {
+	width: 46.9%;
+}
+.col26 {
+	width: 26.5%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+.grid {
+	position: relative;
+}
+.row {
+
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	max-width: $container;
+	@include pie-clearfix;
+}
+footer {
+	height: 100px;
+	display:block;
+	clear:both;
+}
