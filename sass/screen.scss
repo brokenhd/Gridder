@@ -18,10 +18,13 @@
 	}
 }
 
+/* General stuff */
+body { font-family: "roboto", sans-serif; }
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
  }
 
+/* Grid vars */
 $container: 1208px;
 $gpad: 1px;
 
@@ -43,6 +46,8 @@ $gpad: 1px;
 	@include transition-duration(.5s);
 	@include transition-timing-function(ease);
 }
+
+/* Grid widths */
 .col100 {
 	width: 100%;
 	@include query(mobile-landscape) {
@@ -70,10 +75,12 @@ $gpad: 1px;
 		width:50%;
 	}
 }
-.nobot img:first-child {
-	margin-bottom: 1px;
-}
+
+
 .nopad {
+	@include query(bigtime) {
+		padding: 1px 0 1px 1px;
+	}
 	@include query(standard) {
 		padding: 1px 0 1px 1px;
 	}
@@ -81,6 +88,12 @@ $gpad: 1px;
 		padding-left: 1px
 	}
 	
+}
+.notop {
+	padding-top: 0;
+}
+.nobot img:first-child {
+	margin-bottom: 1px;
 }
 
 img {
@@ -103,4 +116,14 @@ footer {
 	height: 100px;
 	display:block;
 	clear:both;
+}
+h1 {
+	font-size: 4em;
+	font-family: "Oswald";
+	text-transform: uppercase;
+	line-height: 1em;
+	margin-top: 1em;
+}
+p {
+	padding: 2em 0;
 }
