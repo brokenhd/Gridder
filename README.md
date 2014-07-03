@@ -22,3 +22,5 @@ Even if this isn't quite up to your expectations, I learned a lot from the exerc
 5/16/14 - Set up media queries and began laying out columns to fit each query, added some transition effects for a nicer time.
 
 5/17/14 - Crazy day, worked on  final tweaks to get it working as well as I could get it.
+
+asdf
